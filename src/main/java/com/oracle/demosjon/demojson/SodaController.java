@@ -54,7 +54,7 @@ public class SodaController {
                 System.out.println("Content:     " + resultDoc.getContentAsString());
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println(e);
         }
     }
 }
