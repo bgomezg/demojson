@@ -46,11 +46,6 @@ public class TestSoda {
 
     // Get the database connection from UCP.
     try (Connection conn = pds.getConnection()) {
-      System.out.println("Available connections after checkout: "
-          + pds.getAvailableConnectionsCount());
-      System.out.println("Borrowed connections after checkout: "
-          + pds.getBorrowedConnectionsCount());       
-      // Perform a database operation
       doSoda(conn);
     } catch (SQLException e) {
         System.out.println("ADBQuickStart - "
@@ -62,8 +57,6 @@ public class TestSoda {
  private static void doSoda(Connection conn) throws SQLException {
 
     System.out.println("Starting doSoda");
-  
- //   conn.setAutoCommit(false);
     SodaController sc = new SodaController (conn);
     sc.doSodaWork();
   } // End of doSQLWork
